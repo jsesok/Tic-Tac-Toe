@@ -16,10 +16,16 @@ export default function Board() {
   function handleClick(i) {
     // create a copy of the squares array
     const nextSquares = squares.slice();
-    // update the value of the square
-    nextSquares[i] = "X";
+    // determine which value to add to the board based on whether xIsNext is true or false
+    if (xIsNext) {
+      nextSquares[i] = "X";
+    } else {
+      nextSquares[i] = "O";
+    }
     // change the component's state
     setSquares(nextSquares);
+    // flip the value of xIsNext for the next move
+    setXIsNext(!xIsNext);
   }
 
   return (
