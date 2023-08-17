@@ -14,8 +14,8 @@ export default function Board() {
   const [squares, setSquares] = useState(Array(9).fill(null));
 
   function handleClick(i) {
-    // check if the square is already populated. If yes, no action can be done there
-    if (squares[i]) {
+    // check if the square is already populated or if the game was won. If yes, return early.
+    if (squares[i] || calculateWinner(squares)) {
       return;
     }
     // create a copy of the squares array
