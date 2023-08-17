@@ -7,7 +7,7 @@ function Square() {
   function handleClick() {
     setValue("X");
   }
-  
+
   return (
     <button 
       className="square"
@@ -19,6 +19,7 @@ function Square() {
 }
 
 export default function Board() {
+  const [squares, setSquares] = useState(Array(9).fill(null));
   return (
     <Fragment>
       <div className="board-row">
