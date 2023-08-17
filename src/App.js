@@ -14,6 +14,10 @@ export default function Board() {
   const [squares, setSquares] = useState(Array(9).fill(null));
 
   function handleClick(i) {
+    // check if the square is already populated. If yes, no action can be done there
+    if (squares[i]) {
+      return;
+    }
     // create a copy of the squares array
     const nextSquares = squares.slice();
     // determine which value to add to the board based on whether xIsNext is true or false
