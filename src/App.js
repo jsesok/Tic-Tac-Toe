@@ -31,9 +31,19 @@ export default function Board() {
     // flip the value of xIsNext for the next move
     setXIsNext(!xIsNext);
   }
+    
+    // if there is a winner, announce it. Otherwise, announce which player's turn it is
+    const winner = calculateWinner(squares);
+    let status;
+    if (winner) {
+      status = "Winner: " + winner;
+    } else {
+      status = "Next player: " + (xIsNext ? "X" : "O");
+    }
 
   return (
     <Fragment>
+      <div className="status">{status}</div>
       <div className="board-row">
         <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
         <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
