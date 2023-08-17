@@ -11,6 +11,16 @@ function Square({ value, onSquareClick }) {
 
 export default function Board() {
   const [squares, setSquares] = useState(Array(9).fill(null));
+
+  function handleClick(i) {
+    // create a copy of the squares array
+    const nextSquares = squares.slice();
+    // update the value of the square
+    nextSquares[i] = "X";
+    // change the component's state
+    setSquares(nextSquares);
+  }
+
   return (
     <Fragment>
       <div className="board-row">
