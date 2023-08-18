@@ -1,6 +1,6 @@
 ## Tic-Tac-Toe
 
-The Tic-Tac-Toe game is created based on an official React tutorial published [here]https://react.dev/learn/tutorial-tic-tac-toe.
+The Tic-Tac-Toe game is created based on an official React tutorial published [here](https://react.dev/learn/tutorial-tic-tac-toe).
 
 This game:
 
