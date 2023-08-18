@@ -9,10 +9,7 @@ function Square({ value, onSquareClick }) {
   )
 }
 
-function Board() {
-  const [xIsNext, setXIsNext] = useState(true);
-  const [squares, setSquares] = useState(Array(9).fill(null));
-
+function Board({ xIsNext, squares, onPlay }) {
   function handleClick(i) {
     // check if the square is already populated or if the game was won. If yes, return early.
     if (squares[i] || calculateWinner(squares)) {
