@@ -23,10 +23,7 @@ function Board({ xIsNext, squares, onPlay }) {
     } else {
       nextSquares[i] = "O";
     }
-    // change the component's state
-    setSquares(nextSquares);
-    // flip the value of xIsNext for the next move
-    setXIsNext(!xIsNext);
+    onPlay(nextSquares);
   }
     
     // if there is a winner, announce it. Otherwise, announce which player's turn it is
